@@ -1,28 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
 
-ll n;
-ll current_n;
+int n = 0, nAtual = 0;
 
 int main() {
     cin >> n;
-
-    ll numbers[n];
+    int vet[n];
 
     for (int i = 0; i < n; i++) {
-        numbers[i] = 0;
+        vet[i] = 0;
     }
 
     for (int i = 0; i < n - 1; i++) {
-        cin >> current_n;
-        numbers[current_n] = current_n;
+        cin >> nAtual;
+        vet[nAtual - 1] = nAtual;
     }
 
-    for (int i = 1; i < n; i++) {
-        if (numbers[i] == 0) {
-            cout << i << "\n";
-            break;
+    for (int i = 0; i < n; i++) {
+        if (vet[i] == 0) {
+            cout << i + 1 << "\n";
         }
     }
 
